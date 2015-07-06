@@ -1,17 +1,35 @@
 package unicauca.movil.holamundo.fragmentii;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import unicauca.movil.holamundo.fragmentii.fragments.ColorFragment;
+
 
 public class MainActivity extends ActionBarActivity {
+
+    ColorFragment azul, rojo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        azul =  new ColorFragment();
+        azul.init(ColorFragment.COLOR_AZUL);
+
+        rojo = new ColorFragment();
+        rojo.init(ColorFragment.COLOR_ROJO);
+
+        FragmentTransaction fT = getSupportFragmentManager().beginTransaction();
+
+        fT.replace(R.id.container, azul);
+        fT.replace(R.id.container2, rojo);
+
+        fT.commit();
     }
 
     @Override
