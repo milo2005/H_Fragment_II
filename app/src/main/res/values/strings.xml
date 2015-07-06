@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FragmentII</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="colores_n">
+        <item>Azul</item>
+        <item>Rojo</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+        <item>Violeta</item>
+        <item>Naranja</item>
+    </string-array>
+
+</resources>
