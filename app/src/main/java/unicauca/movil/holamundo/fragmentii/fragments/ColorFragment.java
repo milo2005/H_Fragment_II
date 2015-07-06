@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import unicauca.movil.holamundo.fragmentii.R;
 
@@ -39,7 +40,10 @@ public class ColorFragment extends Fragment {
         int colors[] = getActivity().getResources().getIntArray(R.array.colores);
         String colorsN[] = getActivity().getResources().getStringArray(R.array.colores_n);
 
+        TextView txt = (TextView) v.findViewById(R.id.name);
 
+        v.setBackgroundColor(colors[color]);
+        txt.setText(colorsN[color]);
 
         return v;
 
