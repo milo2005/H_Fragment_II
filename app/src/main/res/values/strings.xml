@@ -12,5 +12,9 @@
         <item>Violeta</item>
         <item>Naranja</item>
     </string-array>
+    <string name="title_activity_swipe">SwipeActivity</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="open_drawer">Se abrio el menu</string>
+    <string name="close_drawer">se cerro el menu</string>
 
 </resources>

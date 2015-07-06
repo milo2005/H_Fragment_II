@@ -18,11 +18,13 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final String[] colorN = getResources().getStringArray(R.array.colores_n);
+
         azul =  new ColorFragment();
-        azul.init(ColorFragment.COLOR_AZUL);
+        azul.init(ColorFragment.COLOR_AZUL, colorN);
 
         rojo = new ColorFragment();
-        rojo.init(ColorFragment.COLOR_ROJO);
+        rojo.init(ColorFragment.COLOR_ROJO, colorN);
 
         FragmentTransaction fT = getSupportFragmentManager().beginTransaction();
 

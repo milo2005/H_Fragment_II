@@ -1,6 +1,7 @@
 package unicauca.movil.holamundo.fragmentii.fragments;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -23,13 +24,21 @@ public class ColorFragment extends Fragment {
     public static final int COLOR_NARANJA=5;
 
     int color;
+    String colorsN[];
 
     public ColorFragment() {
         // Required empty public constructor
     }
 
-    public void init(int color){
+    public void init(int color, String colorN[]){
         this.color = color;
+        this.colorsN = colorN;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
     }
 
     @Override
@@ -38,7 +47,8 @@ public class ColorFragment extends Fragment {
         View v =inflater.inflate(R.layout.fragment_color, container, false);
 
         int colors[] = getActivity().getResources().getIntArray(R.array.colores);
-        String colorsN[] = getActivity().getResources().getStringArray(R.array.colores_n);
+        if(colorsN==null)
+            colorsN = getActivity().getResources().getStringArray(R.array.colores_n);
 
         TextView txt = (TextView) v.findViewById(R.id.name);
 
@@ -47,6 +57,10 @@ public class ColorFragment extends Fragment {
 
         return v;
 
+    }
+
+    public String getTitle(){
+        return colorsN[color];
     }
 
 
